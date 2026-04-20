@@ -48,7 +48,24 @@ A cena foi montada utilizando **somente os assets do pacote abaixo**:
 - [x] Skybox configurado
 - [x] Ambiente coerente (floresta simples)
 
-### 3) Organização e Qualidade
+### 3) Interação Obrigatória — Pedra Interativa com Áudio
+
+O projeto conta com uma **pedra interativa** implementada em C# (`pedra_interacao.cs`).
+
+**Como funciona:**
+
+- Ao apontar o controller para a pedra e pressionar o **trigger**, a pedra desliza lateralmente com uma animação suave
+- Um **som de arrasto** é reproduzido no momento da interação
+- Ao pressionar o trigger novamente, a pedra retorna à posição original
+
+**Detalhes técnicos:**
+
+- Input via `OVRInput` (Meta XR SDK)
+- Detecção do objeto por `Physics.Raycast` a partir do controller
+- Movimento interpolado com `Vector3.Lerp`
+- Áudio gerenciado pelo componente `AudioSource` da Unity
+
+### 4) Organização e Qualidade
 
 - [x] Hierarquia organizada em grupos (XR / Terrain / Environment / Props / Lighting)
 - [x] Nomenclatura consistente
@@ -81,6 +98,8 @@ A cena foi montada utilizando **somente os assets do pacote abaixo**:
 - `Assets/_Project/Scenes` — cenas do projeto
 - `Assets/_Project/Prefabs` — prefabs finais (se você criou variações/organizou instâncias)
 - `Assets/_Project/Art` — materiais/texturas (caso tenha organizado/ajustado)
+- `Assets/_Project/Audio` — arquivos de áudio utilizados nas interações
+- `Assets/_Project/Scripts` — scripts C# de interação
 - `Assets/_Project/Docs` — documentação
 - `Assets/ThirdParty/...` — conteúdo importado do pacote (mantido separado)
 
@@ -89,4 +108,4 @@ A cena foi montada utilizando **somente os assets do pacote abaixo**:
 ## Créditos e Licença
 
 - Os modelos, texturas e prefabs utilizados pertencem ao pacote **Environment Pack: Free Forest Sample** e seguem a licença padrão do Unity Asset Store.
-"# MyFirstProject" 
+  "# MyFirstProject"
